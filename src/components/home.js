@@ -23,7 +23,7 @@ const Home = () => {
          try {
           e.preventDefault()
           setLoading(true);
-          const res = await axios.get(`http://www.omdbapi.com/?i=tt3896198&apikey=5d2162b9&s=${state.search}`)
+          const res = await axios.get(`https://www.omdbapi.com/?i=tt3896198&apikey=5d2162b9&s=${state.search}`)
           console.log(res.data.Search)
               setResults(res.data.Search)
               setLoading(false)
@@ -52,10 +52,10 @@ const Home = () => {
           </Container>
           <div className='container'>
             <div className='row'>
-              {results && results.map((value, i) => {
+              {results && results.map((value, index) => {
                 return (
-                  <div className='col-12 col-sm-6 col-md-3 col-lg-4 my-2'>
-                     <MovieDisplay key={value.imdbID} value={value} />
+                  <div className='col-12 col-sm-6 col-md-3 col-lg-4 my-2' key={value.imdbID}>
+                     <MovieDisplay  value={value} />
                   </div>
                 )
               })}

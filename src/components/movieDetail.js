@@ -12,7 +12,7 @@ const MovieDetail = () => {
      useEffect(() => {
           const getmovieDetail = async() => {
             setLoading(true)
-            const res = await axios.get(`http://www.omdbapi.com/?i=${id}&apikey=5d2162b9`)
+            const res = await axios.get(`https://www.omdbapi.com/?i=${id}&apikey=5d2162b9`)
             console.log(res.data)
             setDetail(res.data);
             setLoading(false);
